@@ -2,29 +2,117 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CVG reklamace – mapy problémů</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background: #f5f7fa; color: #222; }
-    .container { max-width: 900px; margin: auto; background: white; padding: 32px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.12); }
-    h1 { margin-top: 0; }
-    .map-link { display: block; padding: 18px 22px; margin: 18px 0; background: #0d6efd; color: white; text-decoration: none; border-radius: 8px; font-size: 20px; font-weight: bold; }
-    .map-link:hover { background: #084298; }
-    .note { margin-top: 28px; color: #666; font-size: 14px; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url("background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(10, 18, 35, 0.72);
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+      backdrop-filter: blur(4px);
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 52px;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      margin-bottom: 36px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .links {
+      display: grid;
+      gap: 18px;
+    }
+
+    .map-link {
+      display: block;
+      padding: 22px 26px;
+      background: linear-gradient(135deg, #2f67ff, #4a7dff);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 28px;
+      font-weight: bold;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+    }
+
+    .map-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      background: linear-gradient(135deg, #2557e6, #3d70f0);
+    }
+
+    .note {
+      margin-top: 30px;
+      font-size: 16px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 28px 22px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .map-link {
+        font-size: 22px;
+        padding: 18px 20px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>CVG reklamace – mapy problémů</h1>
+    <div class="subtitle">
+      Rozcestník interaktivních map reklamací externích vozidel v CZ/SK
+    </div>
 
-    <p>Rozcestník interaktivních map reklamací externích vozidel v CZ/SK.</p>
+    <div class="links">
+      <a class="map-link" href="reklamace_externi_mapa_CZ_SK_v2_filtry.html">
+        Mapa 1: Celková mapa problémů CZ/SK
+      </a>
 
-    <a class="map-link" href="reklamace_externi_mapa_CZ_SK_v2_filtry.html">
-      Mapa 1: Celková mapa problémů CZ/SK
-    </a>
-
-    <a class="map-link" href="reklamace_externi_mapa_CZ_SK_top10_znacky_filtry.html">
-      Mapa 2: TOP 10 značek × kategorie problémů
-    </a>
+      <a class="map-link" href="reklamace_externi_mapa_CZ_SK_top10_znacky_filtry.html">
+        Mapa 2: TOP 10 značek × kategorie problémů
+      </a>
+    </div>
 
     <div class="note">
       Mapy jsou založené na normalizovaném ZIP/PSČ a zobrazují intenzitu výskytu problémů podle lokalit.
